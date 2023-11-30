@@ -7,7 +7,7 @@ import ContactRow from "./ContactRow";
 //   { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
 // ];
 
-const ContactList = () => {
+const ContactList = ({setSelectedContactId}) => {
 
   const [contacts, setContacts] = useState([]);
 
@@ -41,7 +41,7 @@ const ContactList = () => {
           <td>Phone</td>
         </tr>
         {contacts.map((contact) => {
-           return <ContactRow key={contact.id} contact={contact}/>
+           return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />
           })}
       </tbody>
     </table>
