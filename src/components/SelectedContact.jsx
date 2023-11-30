@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const SelectedContact = ({selectedContactId}) => {
+
+const SelectedContact = ({selectedContactId,setSelectedContactId}) => {
 
   const [contactDetails, setContactDetails] = useState(null);
 
@@ -21,6 +22,9 @@ const SelectedContact = ({selectedContactId}) => {
 
   return contactDetails ? (
     <>
+    <button onClick={() => {
+      setSelectedContactId(null);
+    }}>Back</button>
   <h2>Contact Details for {contactDetails.name}</h2>
   <h3>Commpany: {contactDetails.company.name}</h3>
   <h3>Commpany CatchPhrase: {contactDetails.company.catchPhrase}</h3>

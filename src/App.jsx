@@ -17,9 +17,11 @@ const App = () => {
 
   const [selectedContactId, setSelectedContactId] = useState(null);
 
+  //condition ? true condition : false condition ; 
+
   return (
     <>{selectedContactId ? 
-    <SelectedContact selectedContactId={selectedContactId}/> 
+    <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId}/> 
     : 
     <ContactList setSelectedContactId={setSelectedContactId} />}</>
   )
